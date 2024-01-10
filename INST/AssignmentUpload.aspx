@@ -1,0 +1,208 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="AssignmentUpload.aspx.cs" Inherits="AssignmentUpload" MasterPageFile="~/MainSite.master" %>
+
+
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
+    <link rel="stylesheet" type="text/css" href="Styles/Site.css" />
+      
+    <style type="text/css">
+        .style1
+        {
+            height: 25px;
+        }
+        .style2
+        {
+            width: 4px;
+        }
+        .style3
+        {
+            width: 2px;
+        }
+        .style4
+        {
+            width: 159px;
+        }
+        .style5
+        {
+            width: 7px;
+        }
+    </style>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
+    <table width="100%" >
+        <tr>
+            <td class="tblhead">
+                Upload Materials - Documents</td>
+        </tr>
+        <tr>
+            <td class="style1">
+                </td>
+        </tr>
+        <tr>
+            <td>
+                <table  width="100%">
+                    <tr>
+                        <td class="style2">
+                            Session</td>
+                        <td class="style4">
+                            <asp:DropDownList ID="ddlsession" runat="server">
+                            </asp:DropDownList>
+                        </td>
+                        <td class="style5">
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                                ErrorMessage="Session is Required" ForeColor="Red" 
+                                ControlToValidate="ddlsession">*</asp:RequiredFieldValidator>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="style2">
+                            Class</td>
+                        <td class="style4">
+                            <asp:DropDownList ID="ddlclass" runat="server">
+                            </asp:DropDownList>
+                        </td>
+                        <td class="style5">
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                                ErrorMessage="Class is Required" ForeColor="Red" 
+                                ControlToValidate="ddlclass">*</asp:RequiredFieldValidator>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="style2">
+                            Semester</td>
+                        <td class="style4">
+                            <asp:DropDownList ID="ddlsem" runat="server">
+                            </asp:DropDownList>
+                        </td>
+                        <td class="style5">
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                                ErrorMessage="Semester is Required" ForeColor="Red" 
+                                ControlToValidate="ddlsem">*</asp:RequiredFieldValidator>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="style2">
+                            Subject</td>
+                        <td class="style4">
+                            <asp:DropDownList ID="ddlSubject" runat="server">
+                            </asp:DropDownList>
+                        </td>
+                        <td class="style5">
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                                ErrorMessage="Subject is Required" ControlToValidate="ddlSubject" 
+                                ForeColor="Red">*</asp:RequiredFieldValidator>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="style2">
+                            Title :
+                        </td>
+                        <td class="style4">
+                            <asp:TextBox ID="txttitle" runat="server" CssClass="txt"></asp:TextBox>
+                        </td>
+                        <td class="style5">
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
+                                ErrorMessage="Title is Required" ForeColor="Red" 
+                                ControlToValidate="txttitle">*</asp:RequiredFieldValidator>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="style2">
+                            Upload File :</td>
+                        <td class="style4">
+                            <asp:FileUpload ID="FileUpload1" runat="server" CssClass="txt" Width="293px" />
+                        </td>
+                        <td class="style5">
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
+                                ErrorMessage="Upload File is Required" ControlToValidate="FileUpload1" 
+                                ForeColor="Red">*</asp:RequiredFieldValidator>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="style3" align="center" colspan="2">
+                            <asp:Button ID="Button12" runat="server" CssClass="btn" 
+                                Text="Upload" onclick="Button12_Click" />
+                            <asp:Label ID="lblMsg" runat="server" Font-Bold="True" ForeColor="#993300"></asp:Label>
+                        </td>
+                        <td align="center" class="style5">
+                            &nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="style3">
+                            &nbsp;</td>
+                        <td class="style4">
+                            <asp:Label ID="lblsave" runat="server"></asp:Label>
+                        </td>
+                        <td class="style5">
+                            &nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="style3">
+                            &nbsp;</td>
+                        <td class="style4">
+                            <asp:Label ID="lbl" runat="server" ForeColor="#660066"></asp:Label>
+                        </td>
+                        <td class="style5">
+                            &nbsp;</td>
+                    </tr>
+                    <tr>
+                        
+                        <td colspan="2">
+                            <asp:GridView ID="GridView4" runat="server"  CellPadding="4" ForeColor="#333333" 
+            GridLines="None" ShowFooter="True" ShowHeaderWhenEmpty="True" Width="100%" 
+            AutoGenerateColumns="False" EmptyDataText="Record Not Found">
+                                <AlternatingRowStyle BackColor="White" />
+        <EditRowStyle BackColor="#2461BF" />
+        <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+        <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+        <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+        <RowStyle BackColor="#EFF3FB" />
+        <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+        <SortedAscendingCellStyle BackColor="#F5F7FB" />
+        <SortedAscendingHeaderStyle BackColor="#6D95E1" />
+        <SortedDescendingCellStyle BackColor="#E9EBEF" />
+        <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                                <Columns>
+                                  <asp:TemplateField HeaderText="SL.">
+                <ItemTemplate>
+                <%#Container.DataItemIndex+1 %>
+                </ItemTemplate>
+                </asp:TemplateField>
+                                    <asp:BoundField DataField="SubjectName" HeaderText="Title" />
+                                    <asp:BoundField DataField="SemName" HeaderText="SemName" />
+                                    <asp:BoundField DataField="Class_Name" HeaderText="Class" />
+                                    <asp:BoundField DataField="SubjectName" HeaderText="Subject" />
+                                     <asp:BoundField DataField="SessionName" HeaderText="Session" />
+                                 
+                             <asp:TemplateField HeaderText="Assignment" ItemStyle-HorizontalAlign="Center">
+        <ItemTemplate>
+        <strong> </strong>    
+        <a href="../Assignment/<%#Eval("DocumentPath") %>" >view</a>
+    
+        </ItemTemplate>
+        </asp:TemplateField>
+                                </Columns>
+                               
+                            </asp:GridView>
+                        </td>
+                        
+                        <td class="style5">
+                            &nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="style3">
+                            &nbsp;</td>
+                        <td class="style4">
+                            &nbsp;</td>
+                        <td class="style5">
+                            &nbsp;</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+        </tr>
+    </table>
+
+</asp:Content>

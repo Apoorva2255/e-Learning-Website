@@ -1,0 +1,67 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Syllabus.aspx.cs" Inherits="Syllabus"  MasterPageFile="~/Site.master"%>
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
+ <link rel="stylesheet" type="text/css" href="Styles/Site.css" />
+    
+    <style type="text/css">
+        .style1
+        {
+            font-size: xx-large;
+        }
+        .style2
+        {
+            font-size: xx-small;
+        }
+    </style>
+    
+ </asp:Content> 
+ <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" Runat="Server">
+
+   <div align="center">
+    
+        <span class="style1">SYLLABUS</span>
+    <table class="style1">
+        <tr>
+            <td class="style2">
+                Courses ID</td>
+            <td>
+                <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+            </td>
+        </tr>
+        <tr>
+            <td class="style2">
+                Semester SL No.</td>
+            <td>
+                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            </td>
+        </tr>
+        <tr>
+            <td class="style2">
+                Session ID</td>
+            <td>
+                <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+            </td>
+        </tr>
+        <tr>
+            <td class="style2">
+                Subject Details</td>
+            <td>
+                <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+            </td>
+        </tr>
+        <tr>
+            <td class="style2">
+                Create Date</td>
+            <td>
+                <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+            </td>
+        </tr>
+        <tr>
+            <td class="style2">
+                &nbsp;</td>
+            <td>
+                <asp:Button ID="Button1" runat="server" Text="Submit" onclick="Button1_Click" />
+            </td>
+        </tr>
+    </table>
+    </div>
+  </asp:Content>  

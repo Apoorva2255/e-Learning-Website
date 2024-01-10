@@ -1,0 +1,125 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MainSite.master.cs" Inherits="SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title></title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+    <div class="page">
+        <div class="header">
+            <div class="title">
+                <h1>
+                LEARNING GURU
+                </h1>
+            </div>
+            <div class="loginDisplay">
+                <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                    <AnonymousTemplate>
+                        [ <a href="~/Account/Login.aspx" ID="HeadLoginStatus" runat="server">Log In</a> ]
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                       
+                        [ <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out" LogoutPageUrl="~/"/> ]
+                    </LoggedInTemplate>
+                </asp:LoginView>
+            </div>
+            <div class="clear hideSkiplink">
+                <asp:LoginView ID="loginview1" runat="server">
+              <RoleGroups>
+              
+              <asp:RoleGroup Roles="ADM">
+              <ContentTemplate>
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/ADM/Default.aspx" Text="Home"/>
+                         <asp:MenuItem Text="Master">
+                       
+                       <asp:MenuItem NavigateUrl="~/ADM/Courses.aspx" Text="Add Course"/>
+                         
+                        <asp:MenuItem NavigateUrl="~/ADM/Session.aspx" Text="Add Session"/>     
+                         </asp:MenuItem>
+                              <asp:MenuItem NavigateUrl="~/ADM/InstRegistration.aspx" Text="Add Faculty Details"/>                   
+                     
+                     <asp:MenuItem Text="Report">
+                      <asp:MenuItem NavigateUrl="~/ADM/Report/ListOfAsignemnt.aspx" Text="View Assignment BY Inst"/>
+                      <asp:MenuItem NavigateUrl="~/ADM/Report/ListOfContent.aspx" Text="View Content"/>
+                      <asp:MenuItem NavigateUrl="~/ADM/Report/FrmConFrence.aspx" Text="View Conference"/>
+                            <asp:MenuItem NavigateUrl="~/ADM/Report/frmListOfUsersaspx.aspx" Text="List Of Users"/>  
+                              <asp:MenuItem NavigateUrl="~/ADM/Report/frmListOfFaculty.aspx" Text="List Of Faculty"/>  
+                                <asp:MenuItem NavigateUrl="~/ADM/Report/frmListOfStudent.aspx" Text="List Of Student"/> 
+                                <asp:MenuItem NavigateUrl="~/ADM/Report/frmAssignmentDetails.aspx" Text="View Assignment Of Student"/> 
+                     </asp:MenuItem>
+                    
+                    </Items>
+                </asp:Menu>
+              </ContentTemplate>
+              </asp:RoleGroup>
+              </RoleGroups>
+              </asp:LoginView>
+              <asp:LoginView ID="loginview2" runat="server">
+              <RoleGroups>
+              
+              <asp:RoleGroup Roles="STD">
+              <ContentTemplate>
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/STD/Default.aspx" Text="Home"/>
+                          <asp:MenuItem NavigateUrl="~/STD/frmAssignment.aspx" Text="Upload Assignment"/>    
+                                              
+                     <%--    <asp:MenuItem NavigateUrl="~/STD/ListOfAsignemnt.aspx" Text="View Assignment"/>  --%>         
+                       <asp:MenuItem NavigateUrl="~/STD/ListOfContent.aspx" Text="View Content"/>       
+                   
+                             <asp:MenuItem NavigateUrl="~/STD/FrmConFrence.aspx" Text="View Conference" />     
+                    </Items>
+                </asp:Menu>
+              </ContentTemplate>
+              </asp:RoleGroup>
+              </RoleGroups>
+              </asp:LoginView>
+
+              <asp:LoginView ID="loginview3" runat="server">
+              <RoleGroups>
+              
+              <asp:RoleGroup Roles="INST">
+              <ContentTemplate>
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/INST/Default.aspx" Text="Home"/>
+                         <asp:MenuItem NavigateUrl="~/INST/AssignmentUpload.aspx" Text="Add Assignment"/>
+                         <asp:MenuItem NavigateUrl="~/INST/CreateConference.aspx" Text="Add Conference"/>           
+                         <asp:MenuItem NavigateUrl="~/INST/FrmaddContent.aspx" Text="Add Content"/>           
+                     
+                         <asp:MenuItem Text="Report">
+                    <asp:MenuItem NavigateUrl="~/INST/frmAssignmentDetails.aspx" Text="View Assignment Of Student"/> 
+                    </asp:MenuItem>
+                    </Items>
+                </asp:Menu>
+              </ContentTemplate>
+              </asp:RoleGroup>
+              </RoleGroups>
+              </asp:LoginView>
+            </div>
+               <div>
+        <table>
+        <td align="right">
+            <asp:Label ID="lblMsg" runat="server" ForeColor="White"></asp:Label></td>
+        </table>
+        </div>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="footer">
+        
+    </div>
+    </form>
+</body>
+</html>

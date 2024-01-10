@@ -1,0 +1,57 @@
+﻿body
+{
+    margin: 0;
+    padding: 0;
+    background-image:  url("/eLearning/Image/pexels-mikael-blomkvist-6476588.jpg");
+    background-size: cover;
+    font-family: Sans-Serif;
+}
+.loginbox
+{
+    position:absolute;
+    top:25%;
+    left:40%;
+    transform: translate(-50%,-);
+    width:350px;
+    height:450px;
+    padding:80px 40px;
+    box-sizing:border-box;
+    background: rgba(0,0,0,0.5);
+}
+.user
+{
+    
+    width:100px;
+    height:100px;
+    overflow:hidden;
+    top: calc(-100px/2);
+    left: calc(50% - 50px);
+    position:absolute;
+}    
+.style4
+{
+    color:White;
+}
+.style7
+{
+    top:60%;
+}
+.style13
+{
+    position:absolute;
+    width:100px;
+    height:20px;
+    left: 50px;
+    top: 50px;
+}
+.style14
+{
+    position:left;
+    width:10px;
+    height:20px;
+    left:auto;
+    bottom:auto;
+    top:auto;
+} 
+        
+    

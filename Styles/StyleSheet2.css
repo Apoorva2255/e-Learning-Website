@@ -1,0 +1,42 @@
+﻿
+body
+{
+    margin: 0;
+    padding: 0;
+    background-image: url("/eLearning/Image/scott-graham-5fNmWej4tAA-unsplash.jpg");
+    font-family: Sans-Serif;
+    background-color: #cccccc;
+    background-blend-mode: overlay;
+
+}
+
+.style1 {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.user
+{
+    width:92px;
+    height:106px;
+    overflow:hidden;
+    top: 0px;
+    left: 8px;
+    position:absolute;
+}    
+.style4
+{
+    color:White;
+}
+.style7
+{
+    top:60%;
+}
+.style14
+{
+    color:#85031A;
+}    
+        
+
+        
+    
